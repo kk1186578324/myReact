@@ -1,15 +1,13 @@
-import React,{Component} from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-class App extends Component{
-
-  render(){
-    return(
-        <div>
-          hello World12
-        </div>
-    )
-  }
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+         hello World
+      </header>
+    </div>
+  );
 }
+
 export default App;
