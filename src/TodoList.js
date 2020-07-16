@@ -5,6 +5,7 @@
 import React,{Component,Fragment} from 'react'
 import './style.css'
 import TodoItem from './TodoItem'
+import { CSSTransition,TransitionGroup} from 'react-transition-group'
 class TodoList extends Component{
     constructor(props){
         super(props)
@@ -25,6 +26,13 @@ class TodoList extends Component{
              <Fragment>
              <div>
                  <span className={this.state.show?'show':'hide'}>qewqewqwe</span>
+                 <CSSTransition
+                     in={this.state.show}
+                     timeout={1000}
+                     classNames='fade'
+                 >
+                 <span>hhhhhhh</span>
+                 </CSSTransition>
                  <button onClick={this.handleToggole}>toggle</button>
                  <label htmlFor="insertArea">输入内容</label>
                  <input id="insertArea" className='input' type="text" value={this.state.inputValue}
@@ -33,10 +41,12 @@ class TodoList extends Component{
                  <button onClick={this.handleBtnClick}>提交</button>
              </div>
              <ul ref={(ul)=>this.ul = ul}>
+                 <TransitionGroup>
                  {
 
                   this.getTodoItem()
                  }
+                 </TransitionGroup>
              </ul>
              </Fragment>
          )
@@ -105,12 +115,20 @@ class TodoList extends Component{
      getTodoItem(){
 
      return this.state.list.map((item,index)=>{
-             return  <TodoItem
-                 content={item}
-                 key={item}
-                 index={index}
-                 deleteItem={this.handleItemDelete.bind(this)}
-             ></TodoItem>
+             return <CSSTransition
+                 in={this.state.show}
+                 timeout={1000}
+                 classNames='fade'
+             >
+             <TodoItem
+                     content={item}
+                     key={item}
+                     index={index}
+                     deleteItem={this.handleItemDelete.bind(this)}
+                 >
+
+             </TodoItem>
+         </CSSTransition>
          })
 
      }
@@ -171,7 +189,6 @@ class TodoList extends Component{
     handleToggole(){
         this.setState((prevState)=>({
             show:!prevState.show
-
         }))
 
 
