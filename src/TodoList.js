@@ -5,6 +5,7 @@
 import React,{Component,Fragment} from 'react'
 import './style.css'
 import TodoItem from './TodoItem'
+import { Button,Input,List} from 'antd';
 import { CSSTransition,TransitionGroup} from 'react-transition-group'
 class TodoList extends Component{
     constructor(props){
@@ -35,19 +36,26 @@ class TodoList extends Component{
                  </CSSTransition>
                  <button onClick={this.handleToggole}>toggle</button>
                  <label htmlFor="insertArea">输入内容</label>
-                 <input id="insertArea" className='input' type="text" value={this.state.inputValue}
+                 <Input id="insertArea" className='input'  style={{ width: 200 }} type="text" value={this.state.inputValue}
                  onChange={this.handleInputChange} ref={(input)=>this.input1=input}
                  />
-                 <button onClick={this.handleBtnClick}>提交</button>
+                 <Button onClick={this.handleBtnClick} type="primary">提交</Button>
              </div>
-             <ul ref={(ul)=>this.ul = ul}>
-                 <TransitionGroup>
-                 {
-
-                  this.getTodoItem()
-                 }
-                 </TransitionGroup>
-             </ul>
+                 <List
+                     size="large"
+                     header={<div>Header</div>}
+                     footer={<div>Footer</div>}
+                     bordered
+                     dataSource={this.state.list}
+                     renderItem={item => <List.Item key={item}>{item}</List.Item>}
+                 />
+             {/*<ul ref={(ul)=>this.ul = ul}>*/}
+                 {/*<TransitionGroup>*/}
+                 {/*{*/}
+                  {/*this.getTodoItem()*/}
+                 {/*}*/}
+                 {/*</TransitionGroup>*/}
+             {/*</ul>*/}
              </Fragment>
          )
      }
@@ -120,6 +128,7 @@ class TodoList extends Component{
                  timeout={1000}
                  classNames='fade'
              >
+
              <TodoItem
                      content={item}
                      key={item}
@@ -161,7 +170,7 @@ class TodoList extends Component{
         }),()=>{
 
         })
-        console.log(this.ul.querySelectorAll('div').length)
+        // console.log(this.ul.querySelectorAll('div').length)
         // this.setState({
         //
         // })
