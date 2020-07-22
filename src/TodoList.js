@@ -160,6 +160,7 @@ class TodoList extends Component{
        const action = getInputChangeAction(e.target.value)
        store.dispatch(action)
         // this.setState({
+
         //     inputValue:e.target.value,
         //
         // })
