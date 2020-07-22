@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="636feac3-5780-4a89-9d82-b7f1a2981025" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/src/store/actionCreators.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -139,7 +139,7 @@
         <counts>
           <entry key="css" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="js" value="6" />
+          <entry key="js" value="8" />
           <entry key="json" value="2" />
         </counts>
       </usages-collector>
@@ -147,22 +147,22 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="6" />
+          <entry key="JavaScript" value="8" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="11" />
-          <entry key="js" value="1138" />
-          <entry key="txt" value="28" />
+          <entry key="js" value="1328" />
+          <entry key="txt" value="56" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="11" />
-          <entry key="JavaScript" value="1138" />
-          <entry key="PLAIN_TEXT" value="28" />
+          <entry key="JavaScript" value="1328" />
+          <entry key="PLAIN_TEXT" value="56" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -204,14 +204,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TodoList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="208" column="18" selection-start-line="208" selection-start-column="10" selection-end-line="208" selection-end-column="18" />
+            <state relative-caret-position="240">
+              <caret line="159" column="57" selection-start-line="159" selection-start-column="57" selection-end-line="159" selection-end-column="57" />
               <folding>
                 <element signature="e#42#88#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/actionCreators.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="9" column="33" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -234,11 +243,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/reducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state>
+              <caret selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/actionTypes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="2" column="30" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -280,6 +298,8 @@
       <find>store</find>
       <find>setState</find>
       <find>handleItemDelete</find>
+      <find>getInputDeleteAction</find>
+      <find>getInputAddAction</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -291,15 +311,16 @@
       <list>
         <option value="$PROJECT_DIR$/src/test.js" />
         <option value="$PROJECT_DIR$/src/Test.js" />
-        <option value="$PROJECT_DIR$/src/store/actionTypes.js" />
-        <option value="$PROJECT_DIR$/src/store/actionCreators.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/style.css" />
         <option value="$PROJECT_DIR$/src/TodoItem.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/store/index.js" />
-        <option value="$PROJECT_DIR$/src/TodoList.js" />
+        <option value="$PROJECT_DIR$/src/store/actions.js" />
+        <option value="$PROJECT_DIR$/src/store/actionTypes.js" />
         <option value="$PROJECT_DIR$/src/store/reducer.js" />
+        <option value="$PROJECT_DIR$/src/store/actionCreators.js" />
+        <option value="$PROJECT_DIR$/src/TodoList.js" />
       </list>
     </option>
   </component>
@@ -320,9 +341,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="36" />
-    <option name="y" value="255" />
-    <option name="width" value="1971" />
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
+    <option name="width" value="1458" />
     <option name="height" value="936" />
   </component>
   <component name="ProjectView">
@@ -430,7 +451,7 @@
       <workItem from="1594903555041" duration="6118000" />
       <workItem from="1595035257879" duration="56000" />
       <workItem from="1595165424369" duration="1831000" />
-      <workItem from="1595419372206" duration="4419000" />
+      <workItem from="1595419372206" duration="6516000" />
     </task>
     <task id="LOCAL-00001" summary="添加 cssTranstion">
       <created>1594907525804</created>
@@ -453,11 +474,25 @@
       <option name="project" value="LOCAL" />
       <updated>1595419469464</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加删除功能">
+      <created>1595424097289</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595424097289</updated>
+    </task>
+    <task id="LOCAL-00005" summary="添加actionTypes">
+      <created>1595424710854</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1595424710854</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47200000" />
+    <option name="totallyTimeSpent" value="49297000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1455" height="935" extended-state="6" />
@@ -492,7 +527,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加 cssTranstion" />
     <MESSAGE value="添加 store" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加 store" />
+    <MESSAGE value="添加删除功能" />
+    <MESSAGE value="添加actionTypes" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加actionTypes" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/yarn.lock">
@@ -503,7 +540,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store/actionTypes.js" />
-    <entry file="file://$PROJECT_DIR$/src/store/actionCreators.js" />
     <entry file="file://$PROJECT_DIR$/src/Test.js" />
     <entry file="file://$PROJECT_DIR$/src/logo.svg" />
     <entry file="file://$PROJECT_DIR$/src/App.css" />
@@ -576,20 +612,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TodoList.js">
+    <entry file="file://$PROJECT_DIR$/src/store/actionTypes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="208" column="18" selection-start-line="208" selection-start-column="10" selection-end-line="208" selection-end-column="18" />
-          <folding>
-            <element signature="e#42#88#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="56">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store/reducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state>
+          <caret selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actionCreators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TodoList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="159" column="57" selection-start-line="159" selection-start-column="57" selection-end-line="159" selection-end-column="57" />
+          <folding>
+            <element signature="e#42#88#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

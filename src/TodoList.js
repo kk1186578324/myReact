@@ -9,6 +9,7 @@ import { Button,Input,List} from 'antd';
 import { CSSTransition,TransitionGroup} from 'react-transition-group'
 import  store from './store'
 import {CHANGE_INPUT_VALUE,ADD_TODO_ITEM,DELETE_TODO_ITEM } from  './store/actionTypes.js'
+import {getInputChangeAction,getInputAddAction,getInputDeleteAction } from  './store/actionCreators.js'
 class TodoList extends Component{
     constructor(props){
         super(props)
@@ -156,10 +157,7 @@ class TodoList extends Component{
     *修改
    */
     handleInputChange(e){
-       const action = {
-           type:CHANGE_INPUT_VALUE,
-           value:e.target.value
-       }
+       const action = getInputChangeAction(e.target.value)
        store.dispatch(action)
         // this.setState({
         //     inputValue:e.target.value,
@@ -180,9 +178,7 @@ class TodoList extends Component{
     */
 
     handleBtnClick(){
-     const action = {
-         type:ADD_TODO_ITEM
-     }
+     const action = getInputAddAction()
      store.dispatch(action)
 
   /*      this.setState((prevState)=>({
@@ -203,10 +199,7 @@ class TodoList extends Component{
      *删除
     */
     handleItemDelete(index){
-    const action = {
-        type:DELETE_TODO_ITEM,
-        index,
-    }
+    const action = getInputDeleteAction(index)
     store.dispatch(action)
           // list.splice(index,1)
           // this.setState({
