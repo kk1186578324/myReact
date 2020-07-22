@@ -7,6 +7,7 @@ import './style.css'
 import TodoItem from './TodoItem'
 import { Button,Input,List} from 'antd';
 import { CSSTransition,TransitionGroup} from 'react-transition-group'
+import  store from './store'
 class TodoList extends Component{
     constructor(props){
         super(props)
@@ -18,6 +19,7 @@ class TodoList extends Component{
         this.handleInputChange=this.handleInputChange.bind(this)
         this.handleBtnClick=this.handleBtnClick.bind(this)
         this.handleToggole=this.handleToggole.bind(this)
+        console.log(store.getState())
         // this.handleItemDelete=this.handleItemDelete.bind(this)
     }
 
@@ -165,6 +167,7 @@ class TodoList extends Component{
 
     handleBtnClick(){
         this.setState((prevState)=>({
+
             list:[...prevState.list,prevState.inputValue],
             inputValue:''
         }),()=>{
