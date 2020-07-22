@@ -14,12 +14,16 @@ class TodoList extends Component{
         this.state = {
           inputValue:'123',
             show:true,
-          list:['学英语','学数学']
+            list:['学英语','学数学']
         }
         this.handleInputChange=this.handleInputChange.bind(this)
         this.handleBtnClick=this.handleBtnClick.bind(this)
         this.handleToggole=this.handleToggole.bind(this)
+        this.handleStoreChange=this.handleStoreChange.bind(this)
+        console.log(store)
         console.log(store.getState())
+        this.state = store.getState()
+        store.subscribe(this.handleStoreChange)
         // this.handleItemDelete=this.handleItemDelete.bind(this)
     }
 
@@ -39,7 +43,7 @@ class TodoList extends Component{
                  <button onClick={this.handleToggole}>toggle</button>
                  <label htmlFor="insertArea">输入内容</label>
                  <Input id="insertArea" className='input'  style={{ width: 200 }} type="text" value={this.state.inputValue}
-                 onChange={this.handleInputChange} ref={(input)=>this.input1=input}
+                 onChange={this.handleInputChange}
                  />
                  <Button onClick={this.handleBtnClick} type="primary">提交</Button>
              </div>
@@ -49,7 +53,7 @@ class TodoList extends Component{
                      footer={<div>Footer</div>}
                      bordered
                      dataSource={this.state.list}
-                     renderItem={item => <List.Item key={item}>{item}</List.Item>}
+                     renderItem={(item,index) => <List.Item key={item} onClick={this.handleItemDelete.bind(this,index)}>{item}</List.Item>}
                  />
              {/*<ul ref={(ul)=>this.ul = ul}>*/}
                  {/*<TransitionGroup>*/}
@@ -143,21 +147,30 @@ class TodoList extends Component{
          })
 
      }
+    handleStoreChange(){
+        this.setState(store.getState())
+    }
    /**
     * @params
     *修改
    */
     handleInputChange(e){
-
-        console.log(this)
+       const action = {
+           type:'change_input_value',
+           value:e.target.value
+       }
+       store.dispatch(action)
         // this.setState({
         //     inputValue:e.target.value,
         //
         // })
-        const  value =this.input1.value
-       this.setState(()=>({
-          inputValue:value
-       }))
+        // const  value =this.input1.value
+       // this.setState(()=>({
+       //    inputValue:value
+       // }))
+
+
+
         console.log(e.target.value)
     }
     /**
@@ -166,13 +179,17 @@ class TodoList extends Component{
     */
 
     handleBtnClick(){
-        this.setState((prevState)=>({
+     const action = {
+         type:'add_todo_item'
+     }
+     store.dispatch(action)
 
+  /*      this.setState((prevState)=>({
             list:[...prevState.list,prevState.inputValue],
             inputValue:''
         }),()=>{
 
-        })
+        })*/
         // console.log(this.ul.querySelectorAll('div').length)
         // this.setState({
         //
@@ -185,7 +202,11 @@ class TodoList extends Component{
      *删除
     */
     handleItemDelete(index){
-
+    const action = {
+        type:'delete_todo_item',
+        index,
+    }
+    store.dispatch(action)
           // list.splice(index,1)
           // this.setState({
           //     list
