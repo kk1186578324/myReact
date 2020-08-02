@@ -1,5 +1,6 @@
 import React,{Component,Fragment} from 'react';
 import { CSSTransition} from 'react-transition-group'
+import './mock/index.js'
 
 class App extends Component {
     constructor(props){

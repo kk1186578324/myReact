@@ -1,4 +1,4 @@
-import {CHANGE_INPUT_VALUE,ADD_TODO_ITEM,DELETE_TODO_ITEM } from  './actionTypes.js'
+import {CHANGE_INPUT_VALUE,ADD_TODO_ITEM,DELETE_TODO_ITEM,GET_DATA_ITEM } from  './actionTypes.js'
 const defaultState = {
     inputValue:'1',
     list:['学英语','学数学']
@@ -23,6 +23,13 @@ export default (state = defaultState,action)=>{
         const newState = JSON.parse(JSON.stringify(state))
         newState.list.splice(action.index,1)
         return newState
+    }
+    if(action.type ===GET_DATA_ITEM){
+        const newState = JSON.parse(JSON.stringify(state))
+        newState.list = action.value
+
+        return newState
+        // return newState
     }
       console.log(state,action)
     return state

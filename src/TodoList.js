@@ -8,8 +8,8 @@ import TodoItem from './TodoItem'
 import { Button,Input,List} from 'antd';
 import { CSSTransition,TransitionGroup} from 'react-transition-group'
 import  store from './store'
-import {CHANGE_INPUT_VALUE,ADD_TODO_ITEM,DELETE_TODO_ITEM } from  './store/actionTypes.js'
-import {getInputChangeAction,getInputAddAction,getInputDeleteAction } from  './store/actionCreators.js'
+import {getInputChangeAction,getInputAddAction,getInputDeleteAction,getDataAction ,getTodoList} from  './store/actionCreators.js'
+import  axios from 'axios'
 class TodoList extends Component{
     constructor(props){
         super(props)
@@ -76,12 +76,15 @@ class TodoList extends Component{
 
       console.log('componentWillMount')
      }
+
     /**
      * @params
      *挂载后
      */
     componentDidMount(){
-
+        console.log(5555)
+      const  action =  getTodoList()
+        store.dispatch(action)
         // ajax
         console.log('componentDidMount')
     }
@@ -201,17 +204,18 @@ class TodoList extends Component{
      *删除
     */
     handleItemDelete(index){
+        console.log(index)
     const action = getInputDeleteAction(index)
     store.dispatch(action)
           // list.splice(index,1)
           // this.setState({
           //     list
           // })
-        this.setState((prevState)=>{
-            const  list = [...prevState.list]
-            list.splice(index,1)
-            return {list}
-        })
+        // this.setState((prevState)=>{
+        //     const  list = [...prevState.list]
+        //     list.splice(index,1)
+        //     return {list}
+        // })
 
     }
 
